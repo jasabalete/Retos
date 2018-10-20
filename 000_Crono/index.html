@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        #timer {
+            font-size: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="timer">00:00:00</div>
+    <script>
+        (function () {
+
+            let segundosTimer = 60;
+
+            timer();
+            
+            function timer() {
+                let segundosTotales = segundosTimer;
+
+                horas = Math.floor(segundosTotales / 3600);
+
+                horas = ( (horas < 10) ? "0" : "" ) + horas;
+                segundosTotales %= 3600;
+
+                minutos = Math.floor(segundosTotales / 60);
+                minutos = ( (minutos < 10) ? "0" : "" ) + minutos;
+
+                segundosTotales %= 60;
+                segundosTotales = ( (segundosTotales < 10) ? "0" : "" ) + segundosTotales;
+
+                document.getElementById("timer").innerHTML = horas + ":" + minutos + ":" + segundosTotales;
+
+                segundosTimer--;
+
+                if (segundosTimer > -1) {
+                    setTimeout(timer, 1000);
+                }
+            }
+        })();
+    </script>
+</body>
+
+</html>
