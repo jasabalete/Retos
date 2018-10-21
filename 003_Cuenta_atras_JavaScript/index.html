@@ -10,36 +10,76 @@
     <style>
         #timer {
             font-size: 50px;
+            cursor: pointer;
+        }
+        .stop {
+            color: #000000;
+        }
+
+        .normal {
+            color: #52ce19;
+        }
+
+        .warning {
+            color: rgb(228, 224, 19);
+        }
+
+        .danger {
+            color: rgb(228, 61, 19);
+            animation: blinker 1s linear infinite;
+        }
+
+        @keyframes blinker {
+            50% {
+                opacity: 0;
+            }
         }
     </style>
 </head>
 
 <body>
-    <div id="timer">00:00:00</div>
+    <div id="timer" class="stop">00:00:00</div>
     <script>
         (function () {
 
-            let segundosTimer = 60;
+            let segundosTimer = 1 * 60 + 10;
+            let isRunning = false;
 
-            timer();
-            
+            document.getElementById("timer").addEventListener("click", start);
+
+            function start() {
+                if (!isRunning) {
+                    isRunning = true;
+                    timer();
+                }
+            }
+
             function timer() {
                 let segundosTotales = segundosTimer;
 
                 horas = Math.floor(segundosTotales / 3600);
 
-                horas = ( (horas < 10) ? "0" : "" ) + horas;
+                horas = ((horas < 10) ? "0" : "") + horas;
                 segundosTotales %= 3600;
 
                 minutos = Math.floor(segundosTotales / 60);
-                minutos = ( (minutos < 10) ? "0" : "" ) + minutos;
+                minutos = ((minutos < 10) ? "0" : "") + minutos;
 
                 segundosTotales %= 60;
-                segundosTotales = ( (segundosTotales < 10) ? "0" : "" ) + segundosTotales;
+                segundosTotales = ((segundosTotales < 10) ? "0" : "") + segundosTotales;
 
                 document.getElementById("timer").innerHTML = horas + ":" + minutos + ":" + segundosTotales;
 
                 segundosTimer--;
+
+                if (segundosTimer > (5 * 60)){
+                    document.getElementById("timer").setAttribute("class", "normal");
+                }
+                if (segundosTimer < (5 * 60) && segundosTimer > (1 * 60)) {
+                    document.getElementById("timer").setAttribute("class", "warning");
+                } else if (segundosTimer < (1 * 60)) {
+                    document.getElementById("timer").setAttribute("class", "danger");
+                }
 
                 if (segundosTimer > -1) {
                     setTimeout(timer, 1000);
