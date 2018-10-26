@@ -1,0 +1,12 @@
+form {
+    display: grid;
+    grid-template-columns: 150px 300px;
+}
+
+input, select {
+    margin: 10px;
+}
+
+.error {
+    border: 2px solid red;
+}

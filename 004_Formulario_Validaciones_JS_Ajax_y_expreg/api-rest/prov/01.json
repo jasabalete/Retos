@@ -1,0 +1,34 @@
+[
+    {
+        "codigo": "04",
+        "nombre": "Almeria"
+    },
+    {
+        "codigo": "11",
+        "nombre": "Cadiz"
+    },
+    {
+        "codigo": "14",
+        "nombre": "Cordoba"
+    },
+    {
+        "codigo": "18",
+        "nombre": "Granada"
+    },
+    {
+        "codigo": "21",
+        "nombre": "Huelva"
+    },
+    {
+        "codigo": "23",
+        "nombre": "Jaen"
+    },
+    {
+        "codigo": "29",
+        "nombre": "Malaga"
+    },
+    {
+        "codigo": "41",
+        "nombre": "Sevilla"
+    }
+]

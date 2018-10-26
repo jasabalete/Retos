@@ -1,0 +1,38 @@
+[
+    {
+        "codigo": "05",
+        "nombre": "Avila"
+    },
+    {
+        "codigo": "09",
+        "nombre": "Burgos"
+    },
+    {
+        "codigo": "24",
+        "nombre": "Leon"
+    },
+    {
+        "codigo": "34",
+        "nombre": "Palencia"
+    },
+    {
+        "codigo": "37",
+        "nombre": "Salamanca"
+    },
+    {
+        "codigo": "40",
+        "nombre": "Segovia"
+    },
+    {
+        "codigo": "42",
+        "nombre": "Soria"
+    },
+    {
+        "codigo": "47",
+        "nombre": "Valladolid"
+    },
+    {
+        "codigo": "49",
+        "nombre": "Zamora"
+    }
+]
