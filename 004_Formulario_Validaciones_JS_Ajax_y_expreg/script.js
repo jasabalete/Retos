@@ -53,12 +53,14 @@ $(function () {
         }
 
         if( $("select[name='ccaa'").val() === ""){
+            hayError = true;
             $("select[name='ccaa'").addClass("error");
         } else {
             $("select[name='ccaa'").removeClass("error");
         }
 
         if( $("select[name='provincia'").val() === ""){
+            hayError = true;
             $("select[name='provincia'").addClass("error");
         } else {
             $("select[name='provincia'").removeClass("error");
